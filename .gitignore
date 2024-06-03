@@ -3,6 +3,9 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
+/out
+/.idea
+/June-Backend-Banking-System-1.iml
 ### Eclipse ###
 .apt_generated
 .classpath
