@@ -8,8 +8,11 @@ public class User {
     public int age;
     public  String phoneNumber;
     public  String address;
+    public  String dateOfBirth;
+    public  int identityNumber;
+    public Account account;
 
-    public User(int id, String fullName, String password, String email, int age, String phoneNumber, String address){
+    public User(int id, String fullName, String password, String email, int age, String phoneNumber, String address,String dateOfBirth,int identityNumber){
         this.id=id;
         this.fullName=fullName;
         this.password=password;
@@ -17,5 +20,8 @@ public class User {
         this.age=age;
         this.phoneNumber=phoneNumber;
         this.address=address;
+        this.dateOfBirth=dateOfBirth;
+        this.identityNumber=identityNumber;
+
     }
 }
