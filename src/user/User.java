@@ -13,7 +13,6 @@ public class User {
     public String dateOfBirth;
     public int identityNumber;
     public Account account;
-
     public User(){
 
     }
