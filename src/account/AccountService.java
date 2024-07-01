@@ -28,4 +28,12 @@ public class AccountService {
             System.out.println("User acoount has been created succesfully.");
         }
     }
+        public void deleteAccountById(int accountNumber){
+            for(Account account:accountList){
+                if(account.accountNumber==accountNumber){
+                    accountList.remove(account);
+                }
+                System.out.println("Account has been deleted");
+            }
+        }
 }
