@@ -28,12 +28,22 @@ public class AccountService {
             System.out.println("User acoount has been created succesfully.");
         }
     }
-        public void deleteAccountById(int accountNumber){
-            for(Account account:accountList){
-                if(account.accountNumber==accountNumber){
-                    accountList.remove(account);
-                }
-                System.out.println("Account has been deleted");
+
+    public void deleteAccountById(int accountNumber) {
+        for (Account account : accountList) {
+            if (account.accountNumber == accountNumber) {
+                accountList.remove(account);
             }
+            System.out.println("Account has been deleted");
         }
+    }
+
+    public void getAllAccounts() {
+            for (Account account : accountList){
+                System.out.println("Account Holders Name : " +account.accountHoldersName);
+                System.out.println("Account Number : " +account.accountNumber);
+                System.out.println("Account Balance : " +account.accountBalance);
+                System.out.println("Account Type : " +account.accountType);
+            }
+    }
 }
