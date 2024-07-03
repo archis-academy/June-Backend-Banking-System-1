@@ -39,11 +39,25 @@ public class AccountService {
     }
 
     public void getAllAccounts() {
-            for (Account account : accountList){
-                System.out.println("Account Holders Name : " +account.accountHoldersName);
-                System.out.println("Account Number : " +account.accountNumber);
-                System.out.println("Account Balance : " +account.accountBalance);
-                System.out.println("Account Type : " +account.accountType);
+        for (Account account : accountList) {
+            System.out.println("Account Holders Name : " + account.accountHoldersName);
+            System.out.println("Account Number : " + account.accountNumber);
+            System.out.println("Account Balance : " + account.accountBalance);
+            System.out.println("Account Type : " + account.accountType);
+        }
+    }
+
+    public Account getByAccountNumber(int accountNumber) {
+        for (Account account : accountList) {
+            if (account.accountNumber == accountNumber) {
+                return account;
             }
+        }
+        return null;
+    }
+
+    public void deposite(double amount, int accountNumber) {
+        Account account = getByAccountNumber(accountNumber);
+        account.accountBalance += amount;
     }
 }
