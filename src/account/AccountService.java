@@ -59,5 +59,10 @@ public class AccountService {
     public void deposite(double amount, int accountNumber) {
         Account account = getByAccountNumber(accountNumber);
         account.accountBalance += amount;
+
+    public void checkBalance(int accountNumber) {
+        Account account = getByAccountNumber(accountNumber);
+        System.out.println("Your Balance : " + account.accountBalance);
+
     }
 }
