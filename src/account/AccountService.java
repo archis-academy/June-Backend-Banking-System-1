@@ -47,8 +47,22 @@ public class AccountService {
         }
     }
 
+    public Account getByAccountNumber(int accountNumber) {
+        for (Account account : accountList) {
+            if (account.accountNumber == accountNumber) {
+                return account;
+            }
+        }
+        return null;
+    }
+
+    public void deposite(double amount, int accountNumber) {
+        Account account = getByAccountNumber(accountNumber);
+        account.accountBalance += amount;
+
     public void checkBalance(int accountNumber) {
         Account account = getByAccountNumber(accountNumber);
         System.out.println("Your Balance : " + account.accountBalance);
+
     }
 }
