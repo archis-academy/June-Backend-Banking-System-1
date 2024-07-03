@@ -39,11 +39,16 @@ public class AccountService {
     }
 
     public void getAllAccounts() {
-            for (Account account : accountList){
-                System.out.println("Account Holders Name : " +account.accountHoldersName);
-                System.out.println("Account Number : " +account.accountNumber);
-                System.out.println("Account Balance : " +account.accountBalance);
-                System.out.println("Account Type : " +account.accountType);
-            }
+        for (Account account : accountList) {
+            System.out.println("Account Holders Name : " + account.accountHoldersName);
+            System.out.println("Account Number : " + account.accountNumber);
+            System.out.println("Account Balance : " + account.accountBalance);
+            System.out.println("Account Type : " + account.accountType);
+        }
+    }
+
+    public void checkBalance(int accountNumber) {
+        Account account = getByAccountNumber(accountNumber);
+        System.out.println("Your Balance : " + account.accountBalance);
     }
 }
