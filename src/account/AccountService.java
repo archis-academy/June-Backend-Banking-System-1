@@ -31,28 +31,11 @@ public class AccountService {
     }
 
     public void deleteAccountById(int accountNumber) {
-
         accountList.removeIf(account -> account.accountNumber == accountNumber);
         System.out.println("Account has been deleted");
-
-        for (Account account : accountList) {
-            if (account.accountNumber == accountNumber) {
-                accountList.remove(account);
-            }
-            System.out.println("Account has been deleted");
-        }
     }
 
     public void getAllAccounts() {
-
-            for (Account account : accountList){
-                System.out.println("Account Holders Name : " +account.accountHoldersName);
-                System.out.println("Account Number : " +account.accountNumber);
-                System.out.println("Account Balance : " +account.accountBalance);
-                System.out.println("Account Type : " +account.accountType);
-            }
-
-
         for (Account account : accountList) {
             System.out.println("Account Holders Name : " + account.accountHoldersName);
             System.out.println("Account Number : " + account.accountNumber);
