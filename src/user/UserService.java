@@ -5,7 +5,11 @@ import java.util.List;
 
 public class UserService {
 
-    List<User> userList = new ArrayList<>();
+    List<User> userList ;
+
+    public UserService(){
+        this.userList=new ArrayList<>();
+    }
 
     public User getUserById(int id) {
         for (User user : userList) {

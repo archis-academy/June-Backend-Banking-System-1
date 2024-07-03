@@ -8,12 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AccountService {
-    List<Account> accountList = new ArrayList<>();
+    List<Account> accountList;
     final int index = 1;
     final UserService userService;
 
     public AccountService(UserService userService) {
         this.userService = userService;
+        this.accountList = new ArrayList<>();
     }
 
     public void createAccount(int userId, String accountType) {
@@ -25,11 +26,15 @@ public class AccountService {
         if (user != null) {
             account.user = user;
             accountList.add(account);
-            System.out.println("User acoount has been created succesfully.");
+            System.out.println("User account has been created succesfully.");
         }
     }
 
     public void deleteAccountById(int accountNumber) {
+
+        accountList.removeIf(account -> account.accountNumber == accountNumber);
+        System.out.println("Account has been deleted");
+
         for (Account account : accountList) {
             if (account.accountNumber == accountNumber) {
                 accountList.remove(account);
@@ -39,6 +44,15 @@ public class AccountService {
     }
 
     public void getAllAccounts() {
+
+            for (Account account : accountList){
+                System.out.println("Account Holders Name : " +account.accountHoldersName);
+                System.out.println("Account Number : " +account.accountNumber);
+                System.out.println("Account Balance : " +account.accountBalance);
+                System.out.println("Account Type : " +account.accountType);
+            }
+
+
         for (Account account : accountList) {
             System.out.println("Account Holders Name : " + account.accountHoldersName);
             System.out.println("Account Number : " + account.accountNumber);
@@ -66,3 +80,4 @@ public class AccountService {
 
     }
 }
+
